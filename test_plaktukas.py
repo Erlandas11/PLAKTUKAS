@@ -97,7 +97,7 @@ class TestPlaktukas(unittest.TestCase):
         lines = result.split("\n")
         
         # Check that content is split across multiple lines
-        content_lines = [l for l in lines if l and not l.startswith("=")]
+        content_lines = [line for line in lines if line and not line.startswith("=")]
         self.assertGreater(len(content_lines), 1)
 
 

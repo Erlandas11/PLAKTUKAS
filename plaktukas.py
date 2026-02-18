@@ -7,6 +7,9 @@ PLAKTUKAS - A simple poster/placard generator
 class Plaktukas:
     """A class representing a placard/poster"""
     
+    # Content padding (2 spaces on each side)
+    CONTENT_PADDING = 4
+    
     def __init__(self, title="", content="", width=60):
         """
         Initialize a Plaktukas (poster/placard)
@@ -44,7 +47,7 @@ class Plaktukas:
             current_line = ""
             
             for word in words:
-                if len(current_line) + len(word) + 1 <= self.width - 4:
+                if len(current_line) + len(word) + 1 <= self.width - self.CONTENT_PADDING:
                     if current_line:
                         current_line += " " + word
                     else:
